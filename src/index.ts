@@ -4,7 +4,7 @@ joplin.plugins.register({
 	onStart: async function() {
 		console.info('Hello world. JoplinGoLinks plugin started!');
 		function updateBody(noteBody) {
-			const regex = /([\n\s])go\/(\w+)/ig;
+			const regex = /([\n\s])go\/([\w-]+)/ig;
 			return noteBody.replaceAll(regex, '$1[go/$2](https://go.sqprod.co/$2)');
 		}
 
